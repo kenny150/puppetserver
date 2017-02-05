@@ -9,6 +9,7 @@ include apache
 
 node puppet {
 #Instalando os pacotes básicos para o PuppetServer
+include tmpfile
 package { 'puppetdb':
   ensure => present,
 }
@@ -20,5 +21,4 @@ service { 'puppetdb':
 $message = hiera('top_secret','dejavu')
 #$message = hiera('message')
 notify { "$message":}
-
 }
