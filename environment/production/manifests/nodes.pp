@@ -4,7 +4,7 @@ notify { 'Aplicando configurações básicas...': }
 include base
 $message = hiera('message')
 notify { "$message":}
-
+include apache
 }
 
 node puppet {
