@@ -1,7 +1,11 @@
 :backends:
 - yaml
+- gpg
 :hierarchy:
 - "nodes/%{::hostname}"
+- secret
 - common
 :yaml:
   :datadir: '/etc/puppet/hieradata'
+  :gpg:
+  :datadir: '/etc/puppet/secret'

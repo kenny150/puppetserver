@@ -17,6 +17,8 @@ service { 'puppetdb':
   require => Package['puppetdb'],
   enable  => true,
 }
-$message = hiera('message')
-notify { "$message":} 
+$message = hiera('top_secret','dejavu')
+#$message = hiera('message')
+notify { "$message":}
+
 }
