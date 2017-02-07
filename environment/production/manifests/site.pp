@@ -20,6 +20,5 @@ notify { 'Sistema operacional da familia RedHat': }
 else { notify { 'Sistema operacional da familia Debian': }
 }
 
-#$message = hiera('message')
-#notify { "Mensagem é $message": }
-
+$message = hiera('message')
+notify { "Mensagem é $message": }
