@@ -50,4 +50,7 @@ notify { 'Contém a tag tmpfile': }
 
 #File <| tag == 'tmpfile' |> ~> Service['tmpfile-service']
 
+# Adicionando um exemplo de ordenação usando stage
+include cookbook::stage
+
 }
