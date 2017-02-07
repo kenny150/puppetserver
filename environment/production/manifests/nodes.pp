@@ -53,4 +53,9 @@ notify { 'Contém a tag tmpfile': }
 # Adicionando um exemplo de ordenação usando stage
 include cookbook::stage
 
+# Usando a função generate (função que executa um determinado script e colhe sua saida
+
+$mensagem = generate('/usr/local/bin/ola.rb')
+notify { "$mensagem": }
+
 }
