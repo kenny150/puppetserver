@@ -36,8 +36,12 @@ service { 'puppet':
    require => Package['puppet'],
 }
 
-}
+# Verificando se trata-se de um servidor puppetserver
 
-#i#base::puppetconf { 'unset':
- #  versao => "$::operatingsystemmajrelease",
-#}
+if tagged('puppetserver') {
+notify { 'Contém a tag puppetserver': }
+
+include base::puppetmaster
+
+}
+}

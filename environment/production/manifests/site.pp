@@ -49,7 +49,7 @@ stage => 'exec_primeiro',
 
 # Incluindo a receita base
 
-include base
+#include base
 
 # Aplicando mensagem via hiera
 
