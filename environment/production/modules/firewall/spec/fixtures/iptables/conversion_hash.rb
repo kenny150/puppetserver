@@ -1274,5 +1274,5 @@ HASH_TO_ARGS = {
       :destination  => '4.3.2.1/32',
     },
     :args => ["-t", :filter, "-s", "1.2.3.4/32", "-d", "4.3.2.1/32", "-p", :tcp, "-m", "comment", "--comment", "003 nfqueue dont specify queue_num or queue_bypass", "-j", "NFQUEUE"]
-  }
+  }  
 }

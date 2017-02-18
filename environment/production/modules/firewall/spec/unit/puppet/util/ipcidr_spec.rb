@@ -29,7 +29,7 @@ describe 'Puppet::Util::IPCidr' do
   describe 'ipv4 address range with invalid cidr' do
     before { @ipcidr = Puppet::Util::IPCidr.new('96.126.112.20/24') }
     subject { @ipcidr }
-    specify { subject.cidr.should == '96.126.112.0/24' }  # .20 is expected to
+    specify { subject.cidr.should == '96.126.112.0/24' }  # .20 is expected to 
                                                           # be silently dropped.
     specify { subject.prefixlen.should == 24 }
     specify { subject.netmask.should == '255.255.255.0' }

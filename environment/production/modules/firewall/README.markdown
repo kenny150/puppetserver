@@ -58,7 +58,7 @@ This approach employs a whitelist setup, so you can define what rules you want a
 
 The code in this section does the following:
 
-* The 'require' parameter in `firewall {}` ensures `my_fw::pre` is run before any other rules.
+* The 'require' parameter in `firewall {}` ensures `my_fw::pre` is run before any other rules.  
 * In the `my_fw::post` class declaration, the 'before' parameter ensures `my_fw::post` is run after any other rules.
 
 Therefore, the run order is:
@@ -663,7 +663,7 @@ firewall { '999 this runs last':
 
 * `provider`: The specific backend to use for this firewall resource. You will seldom need to specify this --- Puppet will usually discover the appropriate provider for your platform. Available providers are ip6tables and iptables. See the [Providers](#providers) section above for details about these providers.
 
-* `queue_bypass`: When using a `jump` value of 'NFQUEUE' this boolean will allow packets to bypass `queue_num`. This is useful when the process in userspace may not be listening on `queue_num` all the time.
+* `queue_bypass`: When using a `jump` value of 'NFQUEUE' this boolean will allow packets to bypass `queue_num`. This is useful when the process in userspace may not be listening on `queue_num` all the time. 
 
 * `queue_num`: When using a `jump` value of 'NFQUEUE' this parameter specifies the queue number to send packets to.
 

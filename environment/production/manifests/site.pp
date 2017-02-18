@@ -19,7 +19,7 @@ elsif $::hostanme =~ /dev-*/ {
 else { notify { 'Ambiente não definido, aplicando o padrão': }
    $ambiente = 'dev'
 }
-#include base
+#include a classe base::puppetconf
 base::puppetconf {'unset':
    ambiente => "$ambiente",
 }

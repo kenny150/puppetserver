@@ -208,7 +208,7 @@ working on those platforms.
 
 #### Features
 
-- Apply firewall resources alphabetically.
+- Apply firewall resources alphabetically. 
 - Add support for connlimit and connmark.
 - Add `mask` as a parameter. (Used exclusively with the recent parameter).
 

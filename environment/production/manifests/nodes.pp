@@ -1,4 +1,4 @@
-# COnfigurando pacots default para nodes indefinidos
+# Configurando pacots default para nodes indefinidos
 
 node default {
 notify { 'Aplicando configurações básicas...': }
@@ -9,9 +9,6 @@ node puppet {
 #Instalando os pacotes básicos para o PuppetServer
 include base
 }
-# Coletando dados do hiera e apresentando
-#$message = hiera('message')
-#notify { "$message":}
 # Chamando um definition type
 base::tmpfile { 'unset':
   file => [ '1', '2', '3'],

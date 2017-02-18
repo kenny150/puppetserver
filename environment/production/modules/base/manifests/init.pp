@@ -8,7 +8,7 @@ class base {
 if $::operatingsystem in ['CentOS']{
 notify { 'Detectando sistema operacional': }
 notify { "Sistema operacional é ${::operatingsystem}": }
-package { ['epel-release','yum-utils','openssh','bind-utils','htop','vim-enhanced','net-tools','telnet','iptables-services']:
+package { ['epel-release','yum-utils','openssh','bind-utils','htop','vim-enhanced','net-tools','telnet',]:
   ensure => present,
 }
 service { 'sshd':
@@ -25,5 +25,6 @@ file { '/etc/ssh/sshd_config.conf':
 }
 
 } else { notify { '...': } }
+include myfw
 }
 
