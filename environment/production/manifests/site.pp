@@ -12,8 +12,15 @@
 #else {  notify { 'Não de Dev': }
 #}
 
-# Coletando o ambiente baseado no nome
+# Definindo um estagio para execução
+stage { 'exec_primeiro':
+before => Stage['main'],
+}
+# Criando a classe que executará o primeiro passo da receita antes dos outros
 
+class inicial {
+
+# Coletando o ambiente baseado no nome
 if $::hostname =~ /prd-*/ {
    $ambiente = 'production'
 }
@@ -27,20 +34,24 @@ else { notify { 'Ambiente não definido, aplicando o padrão': }
    $ambiente = 'dev'
 }
 
-include base
+#include base
 base::puppetconf {'unset':
    ambiente => "$ambiente",
 }
 
-# Coletando sistema operacional
-if $::operatingsystem in ['CentOS'] {
-notify { 'Sistema operacional da familia RedHat': }
 }
-elsif $::operatingsystem in ['Debian','Ubuntu'] {
-notify { 'Sistema operacional da familia RedHat': }
+
+# Declarando a classe criada e dizendo que ela será executada antes das demais
+
+class { 'inicial':
+stage => 'exec_primeiro',
 }
-else { notify { 'Sistema operacional da familia Debian': }
-}
+
+# Incluindo a receita base
+
+include base
+
+# Aplicando mensagem via hiera
 
 $message = hiera('message')
 notify { "Mensagem é $message": }

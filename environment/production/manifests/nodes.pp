@@ -14,6 +14,7 @@ node puppet {
 
 package { 'puppetdb':
   ensure => present,
+  before => Service['puppetdb'],
 }
 
 service { 'puppetdb':
