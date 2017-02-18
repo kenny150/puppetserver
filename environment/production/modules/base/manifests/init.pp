@@ -1,9 +1,10 @@
 # Instalando os pacotes básicos e configurações
 class base {
-
-#if tagged('puppetserver') {
-#include base::puppet_server { }
-#}
+# Verificando se trata-se de um servidor puppetserver
+if tagged('puppetserver') {
+notify { 'Contém a tag puppetserver': }
+include base::puppetmaster
+}
 
 if $::operatingsystem in ['CentOS']{
 notify { 'Detectando sistema operacional': }

@@ -1,5 +1,5 @@
 # Importando arquivo nodes.pp
-#import 'nodes.pp'
+import 'nodes/nodes.pp'
 # Definindo um estagio para execução
 stage { 'exec_primeiro':
 before => Stage['main'],
@@ -24,6 +24,7 @@ base::puppetconf {'unset':
    ambiente => "$ambiente",
 }
 }
+
 # Declarando a classe criada e dizendo que ela será executada antes das demais
 class { 'inicial':
 stage => 'exec_primeiro',
