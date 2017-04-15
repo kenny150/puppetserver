@@ -24,16 +24,7 @@ package { 'hiera':
 default: { notify{'So desconhecido': }}
 }
 
-# Coletando a versão do Sistema operacional para configurar o template de repositório
-file { '/etc/puppet/puppet.conf':
-  ensure  => present,
-  content => template('base/puppet.conf.erb'),
-  notify  => Service['puppet'],
-  mode    => '0664',
-  owner   => 'puppet',
-  group   => 'puppet',
 }
-
 # Istalando e configurando o puppet agent
 package { 'puppet':
    ensure => installed,
@@ -44,4 +35,3 @@ service { 'puppet':
    require => Package['puppet'],
 }
 
-}

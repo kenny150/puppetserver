@@ -4,6 +4,10 @@ notify { 'Aplicando configurações básicas...': }
 include base
 }
 
+node prd-audit01 {
+include base
+include auditoria
+}
 
 # Verificando se trata-se de um servidor puppetserver
 node puppet {

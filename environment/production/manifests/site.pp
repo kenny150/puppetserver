@@ -22,6 +22,9 @@ elsif $::hostname =~ /stg-*/ {
 elsif $::hostanme =~ /dev-*/ {
    $ambiente = 'dev'
 }
+elsif $::hostname == 'puppet' {
+   $ambiente = 'production'
+}
 else { notify { 'Ambiente não definido, aplicando o padrão': }
    $ambiente = 'dev'
 }

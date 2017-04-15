@@ -17,7 +17,6 @@ package { ['epel-release','yum-utils','openssh','bind-utils','htop','vim-enhance
   ensure => present,
 }
 
-
 service { 'sshd':
   ensure  => running,
   require => Package['openssh'],
@@ -44,11 +43,9 @@ file { '/etc/yum.repos.d/puppetl.repo':
 #   before  => [Package['puppet'],Service['puppet']],
 }
 
-}
-
-
 #Verificando se o sistema é debian
-if $::operatingsystem in ['Ubuntu']{
+}
+elsif $::operatingsystem in ['Ubuntu']{
 notify { 'Detectando Sistema operacional': }
 notify { "Sistema operacional é ${::operatingsystem}": }
 package { ['openssh-client', 'htop', 'vim',]:
