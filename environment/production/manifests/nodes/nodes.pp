@@ -15,7 +15,7 @@ node puppet {
 
 #Instalando os pacotes básicos para o PuppetServer
 include base
-
+include auditoria
 
 # Chamando um definition type
 base::tmpfile { 'unset':

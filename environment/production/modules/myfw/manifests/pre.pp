@@ -26,5 +26,10 @@ class myfw::pre {
  proto => 'tcp',
  dport  => ['8139','8140'],
  action => 'accept',
-}
+ }
+ firewall { '0514 Permite a comunicacao com o servidor de auditoria':
+ proto => 'tcp',
+ dport => '514',
+ action => 'accept',
+ }
 }

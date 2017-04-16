@@ -19,7 +19,7 @@ file { '/etc/rsyslog.d':
 
 
 file { '/etc/rsyslog.conf':
-  source => 'puppet:///modules/auditoria/rsyslog.conf.file.redhat'
+  source => 'puppet:///modules/auditoria/rsyslog.conf.file.redhat',
   require => Package['rsyslog'],
   notify => Service['rsyslog'],
 }
