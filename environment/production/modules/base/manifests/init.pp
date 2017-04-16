@@ -53,5 +53,18 @@ package { ['openssh-client', 'htop', 'vim',]:
 }
 }
 else { notify { '...': } }
+
+#Incluindo a classe myfw
 include myfw
+
+
+# Incluindo por no arquivo hosts o endereço do puppet
+host { 'puppet':
+  ensure => present,
+  ip => '192.168.0.125',
+}
+host { 'teste':
+  ensure => present,
+  ip => '10.10.10.10',
+}
 }
